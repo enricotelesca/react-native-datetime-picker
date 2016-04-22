@@ -13,6 +13,7 @@ var {
     DatePickerIOS,
     TouchableOpacity,
     Navigator,
+    Dimensions,
     Text,
 } = React;
 
@@ -89,10 +90,9 @@ module.exports =  React.createClass({
     },
 });
 
-var sr = app.Screen;
 var styles = StyleSheet.create({
     actionSheetContainer: {
-        height: sr.h-Navigator.NavigationBar.Styles.General.TotalNavHeight,
+        height: Dimensions.get('window').height,
         justifyContent: "center",
         backgroundColor: 'rgba(0, 0, 0, 0.5)',
     },
