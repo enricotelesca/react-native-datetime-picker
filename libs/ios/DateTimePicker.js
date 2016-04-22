@@ -12,13 +12,13 @@ var {
     View,
     DatePickerIOS,
     TouchableOpacity,
+    TouchableHighlight,
     Navigator,
     Dimensions,
     Text,
 } = React;
 
 var Overlay = require('./overlay.js');
-var Button = require('@remobile/react-native-simple-button');
 
 module.exports =  React.createClass({
     getInitialState() {
@@ -77,9 +77,12 @@ module.exports =  React.createClass({
                         style = {styles.datePicker}
                         />
                     <View style={styles.separator}/>
-                    <Button
+                    <TouchableHighlight
                         onPress={this.onComplete}
-                        style={styles.button}>Select</Button>
+                        underlayColor="#f4f7f7"
+                        style={styles.button}>
+                        <Text style={styles.buttonText}>Select</Text>
+                    </TouchableHighlight>
                     <TouchableOpacity
                         style={styles.touchableOpacity}
                         activeOpacity={1}
@@ -105,6 +108,11 @@ var styles = StyleSheet.create({
     button: {
         paddingVertical: 10,
         backgroundColor: 'white',
+    },
+    buttonText: {
+        color: '#295bac',
+        fontSize: 20,
+        textAlign: 'center'
     },
     separator: {
         height: 1,
