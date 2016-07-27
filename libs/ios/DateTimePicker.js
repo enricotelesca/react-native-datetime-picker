@@ -48,6 +48,11 @@ module.exports =  React.createClass({
       date: date,
     });
   },
+  dismissTimePicker(){
+    this.setState({
+      visible: true,
+    });
+  },
   onClose() {
     this.setState({
       visible: false,
