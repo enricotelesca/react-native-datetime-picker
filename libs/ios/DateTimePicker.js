@@ -6,8 +6,8 @@
 */
 'use strict';
 
-var React = require('react-native');
-var {
+import React from 'react';
+import {
     StyleSheet,
     View,
     DatePickerIOS,
@@ -16,7 +16,7 @@ var {
     Navigator,
     Dimensions,
     Text,
-} = React;
+} from 'react-native';
 
 var Overlay = require('./overlay.js');
 
