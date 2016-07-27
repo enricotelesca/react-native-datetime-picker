@@ -66,27 +66,25 @@ module.exports =  React.createClass({
         return this.state.visible && (
             <Overlay visible={this.state.visible}>
                 <View style={styles.actionSheetContainer}>
-                    <TouchableOpacity
-                        style={styles.touchableOpacity}
-                        activeOpacity={1}
-                        onPress={this.onClose} />
+                    <TouchableHighlight
+                      onPress={this.onComplete}
+                      underlayColor="#f4f7f7"
+                      style={styles.button}>
+                        <Text style={styles.buttonText}>{this.props.selectLabel}</Text>
+                    </TouchableHighlight>
+                    <TouchableHighlight
+                      onPress={this.onClose}
+                      underlayColor="#f4f7f7"
+                      style={styles.button}>
+                        <Text style={styles.buttonText}>{this.props.close}</Text>
+                    </TouchableHighlight>
+                    <View style={styles.separator}/>
                     <DatePickerIOS
                         date={this.state.date}
                         mode={this.state.mode}
                         onDateChange={this.onDateChange}
                         style = {styles.datePicker}
                         />
-                    <View style={styles.separator}/>
-                    <TouchableHighlight
-                        onPress={this.onComplete}
-                        underlayColor="#f4f7f7"
-                        style={styles.button}>
-                        <Text style={styles.buttonText}>Select</Text>
-                    </TouchableHighlight>
-                    <TouchableOpacity
-                        style={styles.touchableOpacity}
-                        activeOpacity={1}
-                        onPress={this.onClose} />
                 </View>
             </Overlay>
         );
