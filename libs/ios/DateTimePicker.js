@@ -48,22 +48,26 @@ module.exports =  React.createClass({
       date: date,
     });
   },
-  dismissPicker(callback){
+  dismissPicker(){
     this.setState({
       visible: false,
     });
-    if(callback)
-      callback()
+    if (this.props.closeCallback)
+      this.props.closeCallback()
   },
   onClose() {
     this.setState({
       visible: false,
     });
+    if (this.props.closeCallback)
+      this.props.closeCallback()
   },
   onComplete() {
     this.setState({
       visible: false,
     });
+    if (this.props.closeCallback)
+      this.props.closeCallback()
     this.callback(this.state.date);
   },
   onDateChange(date) {
