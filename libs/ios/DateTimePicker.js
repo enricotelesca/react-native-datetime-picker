@@ -50,7 +50,7 @@ module.exports =  React.createClass({
   },
   dismissPicker(){
     this.setState({
-      visible: true,
+      visible: false,
     });
   },
   onClose() {
